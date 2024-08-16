@@ -1,25 +1,23 @@
+/* Importa o CSS */
 import './App.css'
+
+/* importa o componente de card de livro */
 import CardBooks from './components/CardBooks'
+
+/* Importa o arquivo de imagem da capa do livro */
+import capaLivro from './assets/livros/cavernas_aco.jpg'
+
 function App() {
 
   return (
     <>
       
       <CardBooks 
-        titulo = '50 Tons de Preto'
-        autor = 'Kid Bengala'
+        titulo = 'As Cavernas de Aço'
+        autor = 'Isaac Asimov'
+        imagem = {capaLivro}
       />
-      <CardBooks 
-        titulo = '50 Tons de Branco'
-        autor = 'Gabriel Prudencio'
-      />
-      <CardBooks 
-        titulo = '50 Tons de Pardo'
-        autor = 'Pedro Ribeiro'
-      />
-
     
-      
     </>
   )
 }
