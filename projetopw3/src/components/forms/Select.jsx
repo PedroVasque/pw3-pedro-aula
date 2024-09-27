@@ -1,6 +1,6 @@
 import styles from '../forms/Select.module.css'
 
-function Select({text, name}) {
+function Select({text, name, options}) {
 
     return(
 
@@ -8,11 +8,16 @@ function Select({text, name}) {
           
             <label htmlFor={name}>{text}</label>
             <select name={name} id={name}>
+
                 <option>Selecione uma categoria</option>
-                <option>Ficção cientifíca</option>
-                <option>Fantasia heroica</option>
-                <option>Suspense</option>
-                <option>Terror</option>
+
+                {
+                    options.map((option)=>{
+                       // console.log(option.cod_categoria + ' - ' + option.nome_categoria)
+                       return<option>{option.nome_categoria}</option>
+                    })
+                }
+
             </select>
 
         </div>
