@@ -1,16 +1,14 @@
-import styles from '../forms/Button.module.css'
+import styles from "./Button.module.css"
 
 function Button({rotulo}){
+
     return(
 
-        <div className={styles.form_control}>
-
-            <button>{rotulo}</button>
-
+        <div>
+            <button type="submit">{rotulo}</button>
         </div>
 
     )
 }
-
 
 export default Button
