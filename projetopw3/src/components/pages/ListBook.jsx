@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./ListBook.module.css";
 import { useState, useEffect } from "react";
-import BookCard from "../CardBooks";
+import BookCard from "../CardBook";
 import Container from "../layout/Container";
 import ContainerBook from "../layout/ContainerBook"
 import cavernas from "../../assets/livros/cavernas_aco.jpg"

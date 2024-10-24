@@ -1,7 +1,7 @@
 import style from "./CardBook.module.css"
 import Button from "./Button"
 
-const CardBooks = ({titulo, autor, imagem})=>{
+const CardBooks = ({titulo, autor, imagem, cod_livro})=>{
     
     return(
         <div className = {style.bookCard}>
@@ -9,7 +9,7 @@ const CardBooks = ({titulo, autor, imagem})=>{
             <p className={style.autor}>{autor}</p>
             <img src={imagem} alt={titulo} title={{titulo}}/>
             <div>
-                <Button label= 'Detalhes' />
+                <Button label= 'Detalhes' router='/DetailBook/' cod_livro={cod_livro}/>
             </div>
 
         </div>
