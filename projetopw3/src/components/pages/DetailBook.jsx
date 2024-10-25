@@ -34,8 +34,29 @@ const DetailBook = () => {
         },[]);
     
     return (
-        <div>
-            <h1>Detalhes do livro!</h1>
+        <div className={style.grid}>
+            
+            <div className={style.container_img}>
+                <img className={style.img_book_detail} src={caverna} alt='Capa do livro: As cavernas de aço' />
+            </div>
+
+        <div className={style.info}/>
+                <span className={style.titulo}>{book.nome_livro}</span>
+                <span className={style.autor}>{book.autor_livro}</span>
+                <span className={style.descricao}>
+                     {book.descricao_livro}
+                </span>
+         <div className={style.container_buttons}>
+            <Button 
+                label='EDITAR'
+                    />
+
+             <Button 
+                label='EXCLUIR'
+                    />
+
+                </div>
+
         </div>
     )
 }
