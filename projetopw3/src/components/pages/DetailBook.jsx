@@ -1,19 +1,22 @@
-import {React,  useState, useEffect} from 'react'
+import {React, useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom'
+
 import style from './DetailBook.module.css'
 import Button from '../Button'
-import caverna from '../../assets/livros/cavernas_aco.jpg'
+
+import cavernas from '../../assets/livros/cavernas_aco.jpg'
+
 const DetailBook = () => {
 
-    //receperar o codigo do livro
-    const {cod_livro} = useParams()
-    console.log('codigo do livro: ' + cod_livro)
+    /* RECUPERANDO O ID DA URL */
+    const {cod_livro} = useParams();
+    console.log('ID:' + cod_livro);
 
-    // criaçao da state dos dados do livro
-    const[book, setBook] = useState({})
-    
-      /* RECUPERANDO OS DADOS DE LIVRO PARA A EDIÇAO */
-      useEffect(()=>{
+    /* CRIA O STATE DE DADOS QUE VAI ARMAZENAR O DEALHE DO LIVRO ESCOLHIDO */
+    const[book, setBook] = useState({});
+
+    /* RECUPERANDO OS DADOS DE LIVRO PARA A EDIÇAO */
+    useEffect(()=>{
 
         fetch(`http://localhost:5000/listagemLivro/${cod_livro}`, {
             method: 'GET',
@@ -32,37 +35,44 @@ const DetailBook = () => {
         .catch((err)=>{console.log(err)});
 
         },[]);
-    
+
     return (
         <div className={style.grid}>
             
             <div className={style.container_img}>
-                <img className={style.img_book_detail} src={caverna} alt='Capa do livro: As cavernas de aço' />
+                <img className={style.img_book_detail} src={cavernas} alt='Capa do livro: As cavernas de aço' />
             </div>
 
-        <div className={style.info}/>
+            <div className={style.info}>
+
                 <span className={style.titulo}>{book.nome_livro}</span>
                 <span className={style.autor}>{book.autor_livro}</span>
+
                 <span className={style.descricao}>
-                     {book.descricao_livro}
+                    {book.descricao_livro}
                 </span>
+
                 <div className={style.container_buttons}>
-                    <Button
+                    <Button 
                         label='EDITAR'
-                        router='/UpdateBook/'
-                        cod_livro={cod_livro}
+                        router='/updateBook/'
+                        cod_livro={book.cod_livro}
+                        
                     />
 
-                    <Button
+                    <Button 
                         label='EXCLUIR'
-                        router='/DeleteBook/'
-                        cod_livro={cod_livro}
+                        router='/deleteBook/'
+                        cod_livro={book.cod_livro}
                     />
 
                 </div>
 
+            </div>
+
         </div>
     )
+
 }
 
 export default DetailBook

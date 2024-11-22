@@ -1,13 +1,11 @@
-import styles from "./Button.module.css"
+import React from 'react'
+import styles from './Button.module.css'
 
-function Button({rotulo}){
-
-    return(
-
-        <div>
-            <button type="submit">{rotulo}</button>
+const Button = ({rotulo}) => {
+    return (
+        <div className={styles.button}>
+            <button>{rotulo}</button>
         </div>
-
     )
 }
 

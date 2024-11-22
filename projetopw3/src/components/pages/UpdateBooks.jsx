@@ -100,7 +100,7 @@ const UpdateBooks = () => {
                 .then(
                         (data)=>{
                                 console.log(data);
-                                navigate('/ListBooks',{state:'LIVRO ALTEARADO COM SUCESSO!'});
+                                navigate('/listBook',{state:'LIVRO ALTEARADO COM SUCESSO!'});
                         }
                 )
                 .catch(
@@ -127,7 +127,7 @@ const UpdateBooks = () => {
                                         id='nome_livro'
                                         placeholder='Digite o título do livro'
                                         text='Digite o título do livro'
-                                        handlerChangeBook={handlerChangeBook}
+                                        handlerOnchange={handlerChangeBook}
                                         value={book.nome_livro} />
 
                                 <Input 
@@ -136,7 +136,7 @@ const UpdateBooks = () => {
                                         id='autor_livro'
                                         placeholder='Digite o nome do autor'
                                         text='Digite o nome do autor'
-                                        handlerChangeBook={handlerChangeBook} 
+                                        handlerOnchange={handlerChangeBook} 
                                         value={book.autor_livro}/>
 
                                 <Input 
@@ -145,14 +145,14 @@ const UpdateBooks = () => {
                                         id='descricao_livro'
                                         placeholder='Digite uma descrição para  livro'
                                         text='Descrição'
-                                        handlerChangeBook={handlerChangeBook}
+                                        handlerOnchange={handlerChangeBook}
                                         value={book.descricao_livro} />
                                 
                                 <Select 
                                         name="categoria_id"
                                         text="Selecione a categoria do livro"
                                         options={categories}
-                                        handlerChangeBook={handleChangeCategory} />
+                                        handlerOnChange={handleChangeCategory} />
 
                                 <Button 
                                 rotulo='Editar livro'/>

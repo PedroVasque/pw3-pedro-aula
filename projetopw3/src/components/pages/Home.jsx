@@ -1,18 +1,17 @@
-import React from "react";
+import React from 'react'
 
 import style from './Home.module.css'
 
-const Home = ()=>{
-    return(
-
+const Home = () => {
+    return (
         <section className={style.home_container}>
-            <h1>Bem vindo ao <span>LIBRI</span></h1>
+
+            <h1>Bem vindo ao <span>LIBRI!</span></h1>
             <p>Sua plataforma web de gestão de livros!</p>
-            <img src="./book_home.jpg"/>
+            <img src="./book_home.jpg" />
+            
         </section>
-
     )
-
 }
 
 export default Home

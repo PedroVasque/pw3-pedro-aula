@@ -19,7 +19,7 @@ function DeleteBook() {
             resp => resp.json()
         ).then(
             (data)=>{
-                navigate('/ListBooks',{state:'LIVRO EXCLUÍDO COM SUCESSO!'});
+                navigate('/listBook',{state:'LIVRO EXCLUÍDO COM SUCESSO!'});
             }
         ).catch(
             err => console.log(err)
@@ -28,6 +28,7 @@ function DeleteBook() {
 
     return (
         <div>
+            {/* <h1>TESTE DE EXCLUSÃO DE LIVRO!!!!</h1> */}
         </div>
     )
 }
